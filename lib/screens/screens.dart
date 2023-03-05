@@ -34,7 +34,7 @@ class _ChatSceenState extends State<ChatSceen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
-        title: const Text("ChatGPT"),
+        title: const Text("chatGPT"),
         actions: [
           IconButton(
             onPressed: (){}, icon: Icon(Icons.more_vert_rounded, color: Colors.white,))
