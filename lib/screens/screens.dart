@@ -1,4 +1,5 @@
 import 'package:chatgpt/services/assets_manager.dart';
+import 'package:chatgpt/widgets/chat_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -8,7 +9,7 @@ import '../constant/constant.dart';
 
 class ChatSceen extends StatefulWidget {
   const ChatSceen({super.key});
-
+  
   @override
   State<ChatSceen> createState() => _ChatSceenState();
 }
@@ -36,7 +37,7 @@ class _ChatSceenState extends State<ChatSceen> {
         title: const Text("ChatGPT"),
         actions: [
           IconButton(
-            onPressed: (){}, icon: const Icon(Icons.more_vert_rounded, color: Colors.white,))
+            onPressed: (){}, icon: Icon(Icons.more_vert_rounded, color: Colors.white,))
         ],
         elevation: 10,
         leading: Padding(
@@ -50,7 +51,11 @@ class _ChatSceenState extends State<ChatSceen> {
             ListView.builder(
               itemCount: 6,
               itemBuilder: (context,index){
-                return const Text("Hello");
+                return   ChatWidget(
+                  msg: chatMessages[index]['msg'].toString(),
+                  chatIndex: int.parse(
+                    chatMessages[index]['chatIndex'].toString()),
+                );
               }),
         ),
         if (_istyping) ...[
