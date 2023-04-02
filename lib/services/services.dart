@@ -16,11 +16,11 @@ class Services {
                   builder: (context) {
                   return Padding(
                    
-                    padding: const EdgeInsets.all(18.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                      Flexible(child: TextWidget(label: "Chosen Model",
+                      Flexible(child: TextWidget(label: "Chosen Model:",
                       fontSize: 16)),
 
                       Flexible(

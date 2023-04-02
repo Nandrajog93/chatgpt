@@ -1,10 +1,15 @@
 import 'package:chatgpt/constant/constant.dart';
+import 'package:chatgpt/provider/model_provider.dart';
+//import 'package:chatgpt/provider/model_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
 
 import '../constant/text_widget.dart';
 import '../models/models_model.dart';
+import '../provider/model_provider.dart';
+//import '../provider/model_provider.dart';
 import '../services/api_services.dart';
 
 class DropDown extends StatefulWidget {
@@ -15,9 +20,11 @@ class DropDown extends StatefulWidget {
 }
 
 class _DropDownState extends State<DropDown> {
-  String currentModel ="text-davinci-003";
+  String ?currentModel;
   @override
   Widget build(BuildContext context) {
+    final modelsProvider = Provider.of<ModelsProvider>(context,listen: false);
+    currentModel = modelsProvider.getcurrentModel; /// This is to select the drowndown and remain the text.
       return FutureBuilder<List<ModelsModel>>(
         
         future: ApiService.getModels(),
@@ -42,10 +49,12 @@ class _DropDownState extends State<DropDown> {
              child: TextWidget(
              label: snapshot.data![index].id,
              fontSize: 15, ))),
-               value: currentModel,
+               value: currentModel,  /// This is to select the drowndown and remain the text.
                onChanged: (value) => {setState(() {
                  currentModel =value.toString();
-               })
+               }),
+               modelsProvider.setCurrentModel(value.toString()) /// This is to select the drowndown and remain the text.
+
                },
                ),
          );
