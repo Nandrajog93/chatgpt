@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:chatgpt/constant/text_widget.dart';
+import 'package:chatgpt/provider/chats_provider.dart';
 import 'package:chatgpt/services/assets_manager.dart';
 import 'package:chatgpt/widgets/chat_widgets.dart';
 import 'package:flutter/material.dart';
