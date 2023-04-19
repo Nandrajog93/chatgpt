@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             color:cardColor),
         ),
-        home: const ChatSceen(),
+        home: const ChatScreen(),
       ),
     );
   }
