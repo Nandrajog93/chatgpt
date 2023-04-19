@@ -78,7 +78,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       msg: chatProvider
                           .getChatList[index].msg, // chatList[index].msg,
                       chatIndex: chatProvider.getChatList[index]
-                          .chatIndex, //chatList[index].chatIndex,
+                          //chatList[index].chatIndex,
+                        .chatIndex
                     );
                   }),
             ),
